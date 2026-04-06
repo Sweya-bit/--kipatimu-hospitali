@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ST MARTIN HOSPITAL KIPATIMU</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial;
 background:linear-gradient(135deg,#e3f2fd,#ffffff);
-scroll-behavior:smooth;
 }
 
 /* HEADER */
@@ -34,42 +34,175 @@ width:55px;
 margin-right:10px;
 }
 
+/* NAV */
 nav{
 background:#083d7a;
 text-align:center;
 padding:12px;
 }
 
-nav a{
+nav button{
+background:none;
+border:none;
 color:white;
-margin:15px;
-text-decoration:none;
+margin:10px;
+font-size:16px;
 font-weight:bold;
-transition:0.3s;
+cursor:pointer;
 }
 
-nav a:hover{
+nav button:hover{
 color:#ffd700;
+}
+
+/* SECTION */
+.section{
+display:none;
+padding:50px 20px;
+text-align:center;
+animation:fade 0.6s;
+}
+
+.active{
+display:block;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.card{
+background:white;
+margin:15px;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+
+.flex{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 /* HERO */
 .hero{
-height:420px;
-background:linear-gradient(rgba(10,79,163,0.7),
-rgba(13,123,224,0.7)),
-url("hospital.jpg");
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
 text-align:center;
-color:white;
+padding:80px 20px;
+color:#0a4fa3;
 }
 
-.hero-box{
-background:rgba(0,0,0,0.4);
-padding:30px;
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50px;
+text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+background:linear-gradient(90deg,#0a4fa3,#083d7a);
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="logo">
+<img src="logo.png">
+<h2>ST MARTIN HOSPITAL KIPATIMU</h2>
+</div>
+<div>📞 0681259345</div>
+</header>
+
+<!-- MENU -->
+<nav>
+<button onclick="showSection('home')">Home</button>
+<button onclick="showSection('doctors')">Doctors</button>
+<button onclick="showSection('services')">Services</button>
+<button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section active">
+<div class="hero">
+<h1>Karibu ST MARTIN HOSPITAL</h1>
+<p>Huduma bora kwa afya yako</p>
+</div>
+</section>
+
+<!-- DOCTORS -->
+<section id="doctors" class="section">
+<h2>Medical Team</h2>
+<div class="flex">
+<div class="card">DR BASILIANA (MOI)</div>
+<div class="card">DR MWAKIBINGA (Clinical Director)</div>
+<div class="card">Mr Sweya</div>
+<div class="card">DR MTUMBUKA</div>
+<div class="card">DR EMMANUEL</div>
+<div class="card">DR ADLOLOPHINA</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+<h2>Hospital Services</h2>
+<div class="flex">
+<div class="card">Outpatient Services (OPD)</div>
+<div class="card">Maternity Services</div>
+<div class="card">Laboratory Services</div>
+<div class="card">Emergency Care (24hrs)</div>
+<div class="card">Child Health & Immunization</div>
+<div class="card">Pharmacy Services</div>
+<div class="card">Minor & Major Procedures</div>
+<div class="card">HIV Care & Counseling</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+<h2>Contact Us</h2>
+<p>📞 0681259345</p>
+<p>WhatsApp: +255657923987</p>
+<p>✉️ kipatimuhospital@yahoo.com</p>
+</section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/255657923987" target="_blank">
+WhatsApp
+</a>
+
+<!-- FOOTER -->
+<footer>
+<p><b>ST MARTIN HOSPITAL KIPATIMU</b></p>
+<p>📞 0681259345 | WhatsApp: +255657923987</p>
+<p>✉️ kipatimuhospital@yahoo.com</p>
+<p>© 2026 All Rights Reserved</p>
+</footer>
+
+<script>
+function showSection(id){
+let sections=document.querySelectorAll('.section');
+sections.forEach(sec=>sec.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>padding:30px;
 border-radius:12px;
 animation:fadeIn 2s ease-in-out;
 }
