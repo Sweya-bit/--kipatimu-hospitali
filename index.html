@@ -5,71 +5,216 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ST MARTIN HOSPITAL KIPATIMU</title>
 
-<!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin:0;
-  padding:0;
-  background: linear-gradient(135deg, #a8edea, #fed6e3);
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#e3f2fd,#ffffff);
+scroll-behavior:smooth;
 }
 
-/* NAV */
-nav {
-  background:#004aad;
-  padding:10px 20px;
-}
-.nav-menu {
-  list-style:none;
-  display:flex;
-  gap:20px;
-  margin:0;
-  padding:0;
-}
-.nav-menu li {
-  color:white;
-  cursor:pointer;
-  padding:8px 15px;
-  border-radius:5px;
-  transition: 0.3s;
-}
-.nav-menu li:hover {
-  background: #0066cc;
-}
-.nav-menu li.active {
-  background:#ffcc00;
-  color:black;
-  font-weight:bold;
+/* HEADER */
+header{
+background:linear-gradient(90deg,#0a4fa3,#0d7be0);
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
 }
 
-/* Dropdown lists */
-.dropdown-list {
-  display:none;
-  margin:10px 20px;
-  padding:15px;
-  background: rgba(255,255,255,0.95);
-  border-radius:10px;
-  max-width:600px;
-  transition: all 0.5s ease;
-  overflow:hidden;
+.logo{
+display:flex;
+align-items:center;
 }
 
-/* Tick + icons for services */
-.tick-list li {
-  margin-bottom:10px;
-  font-size:16px;
-}
-.tick-list li::before {
-  content:"✅ ";
-}
-.tick-list li i {
-  margin-right:8px;
-  color:#004aad;
+.logo img{
+width:55px;
+margin-right:10px;
 }
 
-/* Doctors list bullets */
+nav{
+background:#083d7a;
+text-align:center;
+padding:12px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ffd700;
+}
+
+/* HERO */
+.hero{
+height:420px;
+background:linear-gradient(rgba(10,79,163,0.7),
+rgba(13,123,224,0.7)),
+url("hospital.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero-box{
+background:rgba(0,0,0,0.4);
+padding:30px;
+border-radius:12px;
+animation:fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* SECTION */
+.section{
+padding:50px 20px;
+text-align:center;
+}
+
+.card{
+background:white;
+margin:15px;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.flex{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer{
+background:linear-gradient(90deg,#0a4fa3,#083d7a);
+color:white;
+text-align:center;
+padding:25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<img src="logo.png">
+<h2>ST MARTIN HOSPITAL KIPATIMU</h2>
+</div>
+
+<div>
+📞 0681259345
+</div>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#doctors">Doctors</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+<div class="hero-box">
+<h2>HUDUMA BORA KWA AFYA YAKO</h2>
+<p>Kituo cha Afya cha Kuaminika</p>
+</div>
+</section>
+
+<!-- DOCTORS -->
+<section class="section" id="doctors">
+<h2>Our Medical Team</h2>
+
+<div class="flex">
+
+<div class="card">DR BASILIANA (MOI)</div>
+<div class="card">DR MWAKIBINGA (Clinical Director)</div>
+<div class="card">Mr Sweya</div>
+<div class="card">DR MTUMBUKA</div>
+<div class="card">DR EMMANUEL</div>
+<div class="card">DR ADLOLOPHINA</div>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+<h2>Hospital Services</h2>
+
+<div class="flex">
+
+<div class="card">Outpatient Services (OPD)</div>
+<div class="card">Maternity Services</div>
+<div class="card">Laboratory Services</div>
+<div class="card">Emergency Services (24hrs)</div>
+<div class="card">Child Health & Immunization</div>
+<div class="card">Pharmacy Services</div>
+<div class="card">Minor & Major Procedures</div>
+<div class="card">HIV Care & Counseling</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+<h2>Contact Us</h2>
+<p>📞 0681259345</p>
+<p>✉️ kipatimuhospital@yahoo.com</p>
+<p>Kipatimu, Tanzania</p>
+</section>
+
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp"
+href="https://wa.me/255657923987"
+target="_blank">
+WhatsApp
+</a>
+
+<footer>
+<p><b>ST MARTIN HOSPITAL KIPATIMU</b></p>
+<p>📞 0681259345</p>
+<p>WhatsApp: +255657923987</p>
+<p>✉️ kipatimuhospital@yahoo.com</p>
+<p>© 2026 All Rights Reserved</p>
+</footer>
+
+</body>
+</html>/* Doctors list bullets */
 .dot-list li {
   margin-bottom:8px;
   font-size:16px;
